@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  node:
+    container_name: justhireit-front
+    build:
+      context: .
+    ports:
+      -   '3001:3000'
+    volumes:
+      -   ./:/app
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      -   justhireit_network
+
+networks:
+  justhireit_network:
+    driver: bridge
