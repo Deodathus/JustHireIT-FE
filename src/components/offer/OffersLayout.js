@@ -1,15 +1,14 @@
-import Header from "./Header";
-import CategoriesLinks from "./CategoriesLinks";
+import Header from "../Header";
 import {Container, Divider} from "@chakra-ui/react";
-import OffersList from "./offer/OffersList";
+import CategoriesLinks from "../CategoriesLinks";
 import {Outlet, useParams} from "react-router";
-import Footer from "./Footer";
-import {useDispatch} from "react-redux";
+import Footer from "../Footer";
 import {useEffect} from "react";
-import OfferFetchReducer from "../reducers/offers/OfferFetchReducer";
-import OfferFetchActionCreator from "../actions/job/OfferFetchActionCreator";
+import OfferFetchReducer from "../../reducers/offers/OfferFetchReducer";
+import OfferFetchActionCreator from "../../actions/job/OfferFetchActionCreator";
+import {useDispatch} from "react-redux";
 
-export default function IndexLayout(props) {
+export default function OffersLayout(props) {
     const generalData = props.generalData;
 
     const dispatch = useDispatch();
@@ -32,7 +31,6 @@ export default function IndexLayout(props) {
             <CategoriesLinks />
             <Divider />
             <Container className={'content'}>
-                <OffersList />
                 <Outlet />
             </Container>
             <Footer year={generalData.year}/>
