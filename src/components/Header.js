@@ -1,5 +1,19 @@
-import {Badge, Box, Container, Heading, SimpleGrid} from "@chakra-ui/react";
+import {
+    Badge,
+    Box,
+    Button,
+    Container,
+    Flex,
+    Heading,
+    HStack,
+    Menu,
+    MenuButton, MenuItem,
+    MenuList,
+    Spacer
+} from "@chakra-ui/react";
 import {Link} from "react-router-dom";
+import {ChevronDownIcon, Icon} from "@chakra-ui/icons";
+import {FaUser} from "react-icons/all";
 
 export default function Header(props) {
     const titleCss = {
@@ -11,16 +25,40 @@ export default function Header(props) {
     return (
         <>
             <Container maxW='full' maxH={150}>
-                <SimpleGrid columns={{sm: 1, md: 2, lg:2}} m={15}>
-                    <Box>
-                        <Heading as='h3' size='lg' style={titleCss}>
-                            <Link to='/'>Just Hire IT</Link> <Badge colorScheme='purple'>v{version}</Badge>
-                        </Heading>
+                <Flex minWidth='max-content' gap='2'>
+                    <Box m={2}>
+                        <HStack>
+                            <Heading as='h3' size='lg' style={titleCss}>
+                                <Link to='/'>Just Hire IT</Link> <Badge colorScheme='purple'>v{version}</Badge>
+                            </Heading>
+                        </HStack>
                     </Box>
-                    <Box>
-
+                    <Spacer />
+                    <Box m={3.5}>
+                        <Menu>
+                            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                                <Icon as={FaUser} />
+                            </MenuButton>
+                            <MenuList>
+                                <Link to={'/panel/home'}>
+                                    <MenuItem>
+                                        Panel
+                                    </MenuItem>
+                                </Link>
+                                <Link to={'/panel/me'}>
+                                    <MenuItem>
+                                        User settings
+                                    </MenuItem>
+                                </Link>
+                                <Link to={'/auth/logout'}>
+                                    <MenuItem>
+                                        Log out
+                                    </MenuItem>
+                                </Link>
+                            </MenuList>
+                        </Menu>
                     </Box>
-                </SimpleGrid>
+                </Flex>
             </Container>
         </>
     );

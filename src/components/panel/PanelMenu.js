@@ -1,13 +1,16 @@
 import PanelMenuLink from "./PanelMenuLink";
-import {FaDollarSign, FaHome} from "react-icons/all";
+import {FaDollarSign, FaEnvelope, FaHome, FaReadme, FaSlidersH} from "react-icons/all";
 import {Box} from "@chakra-ui/react";
 
 export default function PanelMenu(props) {
     return (
         <>
             <Box className={'panelMenu'}>
-                <PanelMenuLink name={'Home'} link={'/panel'} icon={FaHome} />
+                <PanelMenuLink name={'Home'} link={'/panel/home'} icon={FaHome} />
+                <PanelMenuLink name={'Recruitments'} link={'/panel/recruitment'} icon={FaReadme} />
+                <PanelMenuLink name={'Offers'} link={'/panel/offer'} icon={FaEnvelope} />
                 <PanelMenuLink name={'Billing'} link={'/panel/me/billing'} icon={FaDollarSign} />
+                <PanelMenuLink name={'Setting'} link={'/panel/me'} icon={FaSlidersH} />
             </Box>
         </>
     );

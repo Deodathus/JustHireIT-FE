@@ -8,7 +8,12 @@ import AuthLayout from "./components/authentication/AuthLayout";
 import SignInComponent from "./components/authentication/signin/SignInComponent";
 import SignUpComponent from "./components/authentication/signup/SignUpComponent";
 import PanelLayout from "./components/panel/PanelLayout";
-import BillingComponent from "./components/panel/me/BillingComponent";
+import PanelBillingComponent from "./components/panel/me/billing/PanelBillingComponent";
+import PanelRecruitmentList from "./components/panel/recruitment/PanelRecruitmentList";
+import PanelOfferList from "./components/panel/offer/PanelOfferList";
+import PanelHomeComponent from "./components/panel/PanelHomeComponent";
+import PanelMeComponent from "./components/panel/me/PanelMeComponent";
+import PanelOfferCreateForm from "./components/panel/offer/PanelOfferCreateForm";
 
 export default function Router() {
     const version = useSelector(state => {
@@ -32,15 +37,20 @@ export default function Router() {
             path: '/auth',
             element: <AuthLayout generalData={generalData} />,
             children: [
-                { path: '/auth/signup', element: <SignUpComponent />},
-                { path: '/auth/signin', element: <SignInComponent />}
+                { path: '/auth/signup', element: <SignUpComponent /> },
+                { path: '/auth/signin', element: <SignInComponent /> }
             ]
         },
         {
             path: '/panel',
             element: <PanelLayout generalData={generalData} />,
             children: [
-                { path: '/panel/me/billing', element: <BillingComponent />}
+                { path: '/panel/home', element: <PanelHomeComponent /> },
+                { path: '/panel/me/billing', element: <PanelBillingComponent /> },
+                { path: '/panel/recruitment', element: <PanelRecruitmentList /> },
+                { path: '/panel/offer', element: <PanelOfferList/> },
+                { path: '/panel/offer/create', element: <PanelOfferCreateForm />},
+                { path: '/panel/me', element: <PanelMeComponent /> }
             ]
         },
         {

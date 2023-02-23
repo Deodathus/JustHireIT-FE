@@ -1,8 +1,8 @@
 import {Box, ListItem, SimpleGrid, UnorderedList} from "@chakra-ui/react";
 import {useState} from "react";
-import FeaturePlanComponent from "./billing/FeaturePlanComponent";
+import FeaturePlanComponent from "./FeaturePlanComponent";
 
-export default function BillingComponent(props) {
+export default function PanelBillingComponent(props) {
     const [plan, setPlan] = useState();
 
     let firstDescription =
@@ -36,7 +36,7 @@ export default function BillingComponent(props) {
 
     return (
         <>
-            <form action="">
+            <form action="src/components/panel/me">
                 <SimpleGrid columns={{sm: 3, md: 3, lg: 3}}>
                     <Box className={'billingPlans'}>
                         <FeaturePlanComponent name={'Beginner'} description={firstDescription} setPlan={setPlan}  />

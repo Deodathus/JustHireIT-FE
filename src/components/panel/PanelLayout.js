@@ -3,9 +3,23 @@ import {Box, Container, Divider, Grid, GridItem, SimpleGrid} from "@chakra-ui/re
 import {Outlet} from "react-router";
 import Footer from "../Footer";
 import PanelMenu from "./PanelMenu";
+import OfferFetchReducer from "../../reducers/offers/OfferFetchReducer";
+import OfferFetchActionCreator from "../../actions/job/OfferFetchActionCreator";
+import {useEffect} from "react";
+import {useDispatch} from "react-redux";
 
 export default function PanelLayout(props) {
+    const dispatch = useDispatch();
+
     const generalData = props.generalData;
+
+    useEffect(() => {
+        dispatch(
+            OfferFetchReducer.fetchAll(
+                OfferFetchActionCreator.fetchAll()
+            )
+        )
+    });
 
     return (
         <>
