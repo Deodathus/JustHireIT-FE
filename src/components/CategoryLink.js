@@ -1,7 +1,7 @@
 import {Box, Heading, VStack} from "@chakra-ui/react";
 import {Link} from "react-router-dom";
 import {Icon} from "@chakra-ui/icons";
-import IconsMap from "../dictionaries/CategoryIcons";
+import IconsMap from "../dictionaries/offer/CategoryIcons";
 
 export default function CategoryLink(props) {
     const link = props.link;

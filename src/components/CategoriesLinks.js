@@ -1,18 +1,16 @@
 import {Box, Container, Flex, HStack, Spacer} from "@chakra-ui/react";
-import CategoryLink from "./CategoryLink";
 import Filters from "./Filters";
+import {useSelector} from "react-redux";
+import CategoryLink from "./CategoryLink";
 
 export default function CategoriesLinks(props) {
-    const categories = [
-        'PHP',
-        'Python'
-    ];
+    const categories = useSelector(state => state.offers.categories);
 
     let renderedCategories = [];
     if (categories.length > 0) {
         categories.forEach(function (category) {
             renderedCategories.push(
-                <CategoryLink key={category} link={category}></CategoryLink>
+                <CategoryLink key={category.name} link={category.name}></CategoryLink>
             );
         });
     }

@@ -7,6 +7,8 @@ import {useEffect} from "react";
 import OfferFetchReducer from "../../reducers/offers/OfferFetchReducer";
 import OfferFetchActionCreator from "../../actions/job/OfferFetchActionCreator";
 import {useDispatch} from "react-redux";
+import OfferCategoryFetchReducer from "../../reducers/offers/OfferCategoryFetchReducer";
+import OfferCategoryActionCreator from "../../actions/job/OfferCategoryActionCreator";
 
 export default function OffersLayout(props) {
     const generalData = props.generalData;
@@ -20,6 +22,13 @@ export default function OffersLayout(props) {
                 OfferFetchActionCreator.fetchAll(
                     category
                 )
+            )
+        )
+    });
+    useEffect(() => {
+        dispatch(
+            OfferCategoryFetchReducer.fetchAll(
+                OfferCategoryActionCreator.fetchAll()
             )
         )
     });

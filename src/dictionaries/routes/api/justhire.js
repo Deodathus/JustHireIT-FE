@@ -11,7 +11,8 @@ export default function () {
     return {
         ping: host + 'api/ping',
         fetch: host + 'api/job/{jobId}/jobPost/{jobPostId}',
-        fetchAll: host + 'api/jobPost'
+        fetchAll: host + 'api/jobPost',
+        fetchAllJobCategories: host + 'api/job/category'
     };
 }
 

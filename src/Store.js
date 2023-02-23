@@ -19,7 +19,9 @@ let preloadedState = {
                 status: Statuses.idle
             }
         },
-        elements: {}
+        categoriesStatus: Statuses.idle,
+        elements: {},
+        categories: {},
     }
 };
 

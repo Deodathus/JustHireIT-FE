@@ -1,0 +1,7 @@
+
+const PROPERTIES = {
+    HIGHEST_SALARY: 'HIGHEST_SALARY',
+    LOWEST_SALARY: 'LOWEST_SALARY'
+}
+
+export default PROPERTIES;

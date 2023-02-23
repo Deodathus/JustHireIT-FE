@@ -13,3 +13,11 @@
   margin: 15px;
   min-height: 120px;
 }
+
+.jobRow .companyName {
+  margin-top: 13px;
+}
+
+.salaryBadge {
+  color: green;
+}
