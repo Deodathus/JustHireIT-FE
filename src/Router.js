@@ -6,7 +6,9 @@ import OffersList from "./components/offer/OffersList";
 import OfferShowComponent from "./components/offer/single/OfferShowComponent";
 import AuthLayout from "./components/authentication/AuthLayout";
 import SignInComponent from "./components/authentication/signin/SignInComponent";
-import SignUpComponent from "./components/authentication/signin/SignUpComponent";
+import SignUpComponent from "./components/authentication/signup/SignUpComponent";
+import PanelLayout from "./components/panel/PanelLayout";
+import BillingComponent from "./components/panel/me/BillingComponent";
 
 export default function Router() {
     const version = useSelector(state => {
@@ -32,6 +34,13 @@ export default function Router() {
             children: [
                 { path: '/auth/signup', element: <SignUpComponent />},
                 { path: '/auth/signin', element: <SignInComponent />}
+            ]
+        },
+        {
+            path: '/panel',
+            element: <PanelLayout generalData={generalData} />,
+            children: [
+                { path: '/panel/me/billing', element: <BillingComponent />}
             ]
         },
         {

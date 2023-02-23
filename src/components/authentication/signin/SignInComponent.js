@@ -6,7 +6,7 @@ export default function SignInComponent(props) {
         <>
             <Flex width={"100vw"} height={"85vh"} alignContent={"center"} justifyContent={"center"}>
                 <Center>
-                    <Box boxShadow='2xl' rounded='md' bg='white' className={'loginBox'}>
+                    <Box boxShadow='2xl' rounded='md' bg='white' className={'centredBox'}>
                         <Center>
                             <Heading as={'h1'}>
                                 Sign In

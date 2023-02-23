@@ -19,7 +19,7 @@ export default function SignUpComponent(props) {
         <>
             <Flex width={"100vw"} height={"85vh"} alignContent={"center"} justifyContent={"center"}>
                 <Center>
-                    <Box boxShadow='2xl' rounded='md' bg='white' className={'loginBox'}>
+                    <Box boxShadow='2xl' rounded='md' bg='white' className={'centredBox'}>
                         <Center>
                             <Heading as={'h1'}>
                                 <Text>
@@ -27,7 +27,7 @@ export default function SignUpComponent(props) {
                                 </Text>
                             </Heading>
                         </Center>
-                        <form action="">
+                        <form action="src/components/authentication/signin">
                             <SimpleGrid columns={{sm: 2, md: 2, lg: 2}}>
                                 <FormControl className={'signUpFormControl'}>
                                     <FormLabel>Login</FormLabel>
