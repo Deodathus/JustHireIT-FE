@@ -11,9 +11,9 @@ import OfferCategoryFetchReducer from "../../reducers/offers/OfferCategoryFetchR
 import OfferCategoryActionCreator from "../../actions/job/OfferCategoryActionCreator";
 
 export default function OffersLayout(props) {
-    const generalData = props.generalData;
-
     const dispatch = useDispatch();
+
+    const generalData = props.generalData;
     const {category} = useParams();
 
     useEffect(() => {

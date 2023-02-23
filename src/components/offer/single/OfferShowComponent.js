@@ -7,6 +7,7 @@ import OfferShowBody from "./OfferShowBody";
 
 export default function OfferShowComponent(props) {
     const dispatch = useDispatch();
+
     const { jobId, offerId } = useParams();
 
     const offer = useSelector(state => {

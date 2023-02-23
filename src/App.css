@@ -40,10 +40,25 @@
   margin-bottom: 5px;
 }
 
+.signInFormControl {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.signUpFormControl {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 95%;
+}
+
 .paragraph {
   margin-bottom: 10px;
 }
 
 .requirementProgressBar {
   margin-right: 20px;
+}
+
+.loginBox {
+  padding: 30px 90px;
 }

@@ -8,11 +8,13 @@ import {useDispatch} from "react-redux";
 import {useEffect} from "react";
 import OfferFetchReducer from "../reducers/offers/OfferFetchReducer";
 import OfferFetchActionCreator from "../actions/job/OfferFetchActionCreator";
+import OfferCategoryFetchReducer from "../reducers/offers/OfferCategoryFetchReducer";
+import OfferCategoryActionCreator from "../actions/job/OfferCategoryActionCreator";
 
 export default function IndexLayout(props) {
-    const generalData = props.generalData;
-
     const dispatch = useDispatch();
+
+    const generalData = props.generalData;
     const {category} = useParams();
 
     useEffect(() => {
@@ -21,6 +23,13 @@ export default function IndexLayout(props) {
                 OfferFetchActionCreator.fetchAll(
                     category
                 )
+            )
+        )
+    });
+    useEffect(() => {
+        dispatch(
+            OfferCategoryFetchReducer.fetchAll(
+                OfferCategoryActionCreator.fetchAll()
             )
         )
     });
