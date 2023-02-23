@@ -2,19 +2,20 @@ import {Box, Center, SimpleGrid, Skeleton, VStack} from "@chakra-ui/react";
 import OfferRequirement from "./requirements/OfferRequirement";
 import OfferSalary from "./requirements/OfferSalary";
 import OfferPropertyTypes from "../../dictionaries/offer/OfferPropertyTypes";
+import {Link} from "react-router-dom";
 
 export default function OfferRowComponent(props) {
-    const jobPost = props.jobPost;
+    const offer = props.jobPost;
     const requirements = [];
     let salary = {};
 
-    for (let i = 0; i < Object.values(jobPost.requirements).length; i++) {
-        let key = jobPost.id + '_' + Object.values(jobPost.requirements)[i].id;
-        requirements.push(<OfferRequirement key={key} requirement={Object.values(jobPost.requirements)[i]} />);
+    for (let i = 0; i < Object.values(offer.requirements).length; i++) {
+        let key = offer.id + '_' + Object.values(offer.requirements)[i].id;
+        requirements.push(<OfferRequirement key={key} requirement={Object.values(offer.requirements)[i]} />);
     }
 
-    for (let i = 0; i < Object.values(jobPost.properties).length; i++) {
-        let property = Object.values(jobPost.properties)[i];
+    for (let i = 0; i < Object.values(offer.properties).length; i++) {
+        let property = Object.values(offer.properties)[i];
 
         if (property.type === OfferPropertyTypes.LOWEST_SALARY) {
             salary.lowestSalary = property.value;
@@ -27,31 +28,33 @@ export default function OfferRowComponent(props) {
 
     return (
         <>
-            <SimpleGrid columns={{sm:3, md: 3, lg: 3}} className='jobRow'>
-                <Center>
-                    <Box>
-                        <SimpleGrid columns={{sm:2, md: 2, lg: 2}}>
-                            <Skeleton height={'50px'} width={'50px'} />
-                            <span className={'companyName'}>{jobPost.companyName}</span>
-                        </SimpleGrid>
-                    </Box>
-                </Center>
-                <Center>
-                    <Box>
-                        {jobPost.name}
-                    </Box>
-                </Center>
-                <Center>
-                    <VStack>
+            <Link to={'/offers/'+offer.jobId+'/'+offer.id}>
+                <SimpleGrid columns={{sm:3, md: 3, lg: 3}} className='jobRow'>
+                    <Center>
                         <Box>
-                            <OfferSalary salary={salary} />
+                            <SimpleGrid columns={{sm:2, md: 2, lg: 2}}>
+                                <Skeleton height={'50px'} width={'50px'} />
+                                <span className={'companyName'}>{offer.companyName}</span>
+                            </SimpleGrid>
                         </Box>
+                    </Center>
+                    <Center>
                         <Box>
-                            {requirements}
+                            {offer.name}
                         </Box>
-                    </VStack>
-                </Center>
-            </SimpleGrid>
+                    </Center>
+                    <Center>
+                        <VStack>
+                            <Box>
+                                <OfferSalary salary={salary} />
+                            </Box>
+                            <Box>
+                                {requirements}
+                            </Box>
+                        </VStack>
+                    </Center>
+                </SimpleGrid>
+            </Link>
         </>
     );
 }
