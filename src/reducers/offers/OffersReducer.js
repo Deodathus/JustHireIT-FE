@@ -20,6 +20,8 @@ export default function OffersReducer(state = [], action) {
             return OfferCategoryFetchReducer.fetchAllError(state, action);
         case Types.OFFER.FETCH.CATEGORY_FETCH_ALL_FINISHED:
             return OfferCategoryFetchReducer.fetchAllFinished(state, action);
+        default:
+            break;
     }
 
     return state;

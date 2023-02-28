@@ -1,4 +1,4 @@
-import {Badge, Box, Card, CardBody, Divider, SimpleGrid} from "@chakra-ui/react";
+import {Badge, Box, Button, Card, CardBody, Center, SimpleGrid} from "@chakra-ui/react";
 import OfferRequirement from "../requirements/OfferRequirement";
 import OfferPropertyTypes from "../../../dictionaries/offer/OfferPropertyTypes";
 import OfferSalary from "../requirements/OfferSalary";
@@ -114,6 +114,11 @@ export default function OfferShowBody(props) {
                     </Box>
                 </Box>
             </SimpleGrid>
+            <Center>
+                <Box m={'20px'}>
+                    <Button colorScheme='green'>Apply</Button>
+                </Box>
+            </Center>
         </>
     );
 }
