@@ -10,6 +10,9 @@ import OfferFetchReducer from "../reducers/offers/OfferFetchReducer";
 import OfferFetchActionCreator from "../actions/job/OfferFetchActionCreator";
 import OfferCategoryFetchReducer from "../reducers/offers/OfferCategoryFetchReducer";
 import OfferCategoryActionCreator from "../actions/job/OfferCategoryActionCreator";
+import UserMeReducer from "../reducers/user/UserMeReducer";
+import UserActionCreator from "../actions/user/UserActionCreator";
+import Variables from "../dictionaries/actions/Variables";
 
 export default function IndexLayout(props) {
     const dispatch = useDispatch();
@@ -32,6 +35,11 @@ export default function IndexLayout(props) {
                 OfferCategoryActionCreator.fetchAll()
             )
         )
+    });
+    useEffect(() => {
+        dispatch(UserMeReducer.fetchMe(
+            UserActionCreator.fetchMe(sessionStorage.getItem(Variables.SESSION_STORAGE_API_TOKEN_KEY))
+        ));
     });
 
     return (

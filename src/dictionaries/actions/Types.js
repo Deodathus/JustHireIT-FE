@@ -15,6 +15,25 @@ const types = {
             CATEGORY_FETCH_ALL_FINISHED: 'OFFER_CATEGORY|FETCH_ALL_FINISHED',
             CATEGORY_FETCH_ALL_ERROR: 'OFFER_CATEGORY|FETCH_ALL_ERROR',
         }
+    },
+    USER: {
+        ME: {
+            FETCH: {
+                FINISHED: 'USER|ME_FETCH_FINISHED',
+                ERROR: 'USER|ME_FETCH_ERROR',
+                FETCH: 'USER|ME_FETCH',
+            }
+        },
+        SIGNIN: {
+            ERROR: 'USER|SIGNIN_ERROR',
+            FINISHED: 'USER|SIGNIN_FINISHED',
+            SIGNIN: 'USER|SIGNIN',
+        },
+        SIGNUP: {
+            ERROR: 'USER|SIGNUP_ERROR',
+            FINISHED: 'USER|SIGHUP_FINISHED',
+            SIGNUP: 'USER|SIGNUP'
+        }
     }
 }
 

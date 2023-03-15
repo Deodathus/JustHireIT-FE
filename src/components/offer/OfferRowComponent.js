@@ -10,7 +10,7 @@ export default function OfferRowComponent(props) {
     let salary = {};
 
     for (let i = 0; i < Object.values(offer.requirements).length; i++) {
-        let key = offer.id + '_' + Object.values(offer.requirements)[i].id;
+        let key = offer.id + '_' + Object.values(offer.requirements)[i].requirementId;
         requirements.push(<OfferRequirement key={key} requirement={Object.values(offer.requirements)[i]} />);
     }
 

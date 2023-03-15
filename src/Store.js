@@ -4,6 +4,7 @@ import thunkMiddleware from 'redux-thunk';
 import { composeWithDevTools } from "redux-devtools-extension";
 import RootReducer from "./reducers/RootReducer";
 import Statuses from "./dictionaries/actions/Statuses";
+import Variables from "./dictionaries/actions/Variables";
 
 let preloadedState = {
     data: {
@@ -22,6 +23,11 @@ let preloadedState = {
         categoriesStatus: Statuses.idle,
         elements: {},
         categories: {},
+    },
+    user: {
+        me: {
+            token: sessionStorage.getItem(Variables.SESSION_STORAGE_API_TOKEN_KEY)
+        }
     }
 };
 

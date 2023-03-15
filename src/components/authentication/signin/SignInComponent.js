@@ -1,7 +1,36 @@
-import {Box, Button, Center, Flex, FormControl, FormLabel, Heading, Input} from "@chakra-ui/react";
-import {Link} from "react-router-dom";
+import {Box, Button, Center, Flex, FormControl, FormLabel, Heading, Input, useToast} from "@chakra-ui/react";
+import {Link, useNavigate} from "react-router-dom";
+import {useState} from "react";
+import {useDispatch} from "react-redux";
+import UserSignInReducer from "../../../reducers/user/UserSignInReducer";
+import UserActionCreator from "../../../actions/user/UserActionCreator";
 
 export default function SignInComponent(props) {
+    const toast = useToast();
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
+
+    function signIn() {
+        if (!login || !password) {
+            toast({
+                title: 'Login or password was not provided!',
+                status: "error",
+                isClosable: true,
+                duration: 2000,
+                position: "top-end"
+            });
+        } else {
+            dispatch(UserSignInReducer.signIn(
+                UserActionCreator.signIn(login, password)
+            ));
+
+            navigate('/');
+        }
+    }
+
     return (
         <>
             <Flex width={"100vw"} height={"85vh"} alignContent={"center"} justifyContent={"center"}>
@@ -12,23 +41,19 @@ export default function SignInComponent(props) {
                                 Sign In
                             </Heading>
                         </Center>
-                        <form action="">
+                        <form action="/">
                             <FormControl className={'signInFormControl'}>
                                 <FormLabel>Login</FormLabel>
-                                <Input name={'login'} />
-                            </FormControl>
-                            <FormControl className={'signInFormControl'}>
-                                <FormLabel>E-mail</FormLabel>
-                                <Input type='email' name={'email'} />
+                                <Input value={login} onChange={(e) => setLogin(e.target.value)} name={'login'} />
                             </FormControl>
                             <FormControl>
                                 <FormLabel>Password</FormLabel>
-                                <Input type='password' name={'password'} />
+                                <Input value={password} onChange={(e) => setPassword(e.target.value)} type='password' name={'password'} />
                             </FormControl>
 
                             <Center>
                                 <Box m={'15px'}>
-                                    <Button colorScheme='green'>Sign in</Button>
+                                    <Button onClick={signIn} colorScheme='green'>Sign in</Button>
                                 </Box>
                             </Center>
 

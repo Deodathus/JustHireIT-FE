@@ -1,4 +1,4 @@
-import Types from "../../dictionaries/actions/job/Types";
+import Types from "../../dictionaries/actions/Types";
 import OfferFetchReducer from "./OfferFetchReducer";
 import OfferCategoryFetchReducer from "./OfferCategoryFetchReducer";
 

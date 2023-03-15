@@ -1,4 +1,4 @@
-import Types from "../../dictionaries/actions/job/Types";
+import Types from "../../dictionaries/actions/Types";
 
 function fetchAll() {
     return {

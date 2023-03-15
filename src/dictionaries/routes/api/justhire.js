@@ -12,7 +12,9 @@ export default function () {
         ping: host + 'api/ping',
         fetch: host + 'api/job/{jobId}/jobPost/{jobPostId}',
         fetchAll: host + 'api/jobPost',
-        fetchAllJobCategories: host + 'api/job/category'
+        fetchAllJobCategories: host + 'api/job/category',
+        signin: host + 'api/auth/signin',
+        fetchMe: host + 'api/auth/me',
     };
 }
 
