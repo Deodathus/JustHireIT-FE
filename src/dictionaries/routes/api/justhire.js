@@ -14,6 +14,7 @@ export default function () {
         fetchAll: host + 'api/jobPost',
         fetchAllJobCategories: host + 'api/job/category',
         signin: host + 'api/auth/signin',
+        signup: host + 'api/auth/signup',
         fetchMe: host + 'api/auth/me',
     };
 }

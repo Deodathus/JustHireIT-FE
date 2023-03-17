@@ -12,7 +12,7 @@ function signIn(action) {
                     console.log(error);
                     dispatch(UserActionCreator.signInError(error));
                 }
-            )
+            );
     }
 }
 

@@ -44,7 +44,9 @@ function signUp(login, email, password, repeatPassword, companyName, companyDesc
 function signUpFinished(token) {
     return {
         type: Types.USER.SIGNUP.FINISHED,
-        payload: token
+        payload: {
+            token: token.apiToken
+        }
     };
 }
 
