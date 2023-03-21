@@ -4,10 +4,13 @@ import ApplyOnOfferActionCreator from "../../actions/offers/ApplyOnOfferActionCr
 function apply(action) {
     return async function applyThunk(dispatch, setState) {
         await ApplyOnJobOffer(
+            action.payload.id,
+            action.payload.jobId,
             action.payload.name,
             action.payload.lastName,
             action.payload.description,
-            action.payload.cv
+            action.payload.cv,
+            action.payload.token
         )
             .then(response => {
                 dispatch(ApplyOnOfferActionCreator.applyFinished());

@@ -2,14 +2,8 @@ import {Badge, Box, Progress, Stat, StatLabel, StatNumber} from "@chakra-ui/reac
 
 export default function OfferRequirement(props) {
     const name = props.requirement.name;
+    const score = props.requirement.score;
     const fullVersion = props.fullVersion;
-
-    let requiredScore = Math.floor(Math.random() * 5);
-    if (requiredScore === 0) {
-        requiredScore = 20;
-    } else {
-        requiredScore = requiredScore * 20;
-    }
 
     if (fullVersion) {
         return (
@@ -18,7 +12,7 @@ export default function OfferRequirement(props) {
                     <Stat>
                         <StatLabel>{name}</StatLabel>
                         <StatNumber className={'requirementProgressBar'}>
-                            <Progress value={requiredScore} />
+                            <Progress value={score * 20} />
                         </StatNumber>
                     </Stat>
                 </Box>

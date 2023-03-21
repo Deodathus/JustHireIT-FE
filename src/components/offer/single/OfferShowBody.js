@@ -14,7 +14,7 @@ import OfferRequirement from "../requirements/OfferRequirement";
 import OfferPropertyTypes from "../../../dictionaries/offer/OfferPropertyTypes";
 import OfferSalary from "../requirements/OfferSalary";
 import ApplicationFormComponent from "../application/ApplicationFormComponent";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import ApplyOnOfferActionCreator from "../../../actions/offers/ApplyOnOfferActionCreator";
 import ApplyOnOfferReducer from "../../../reducers/offers/ApplyOnOfferReducer";
 
@@ -22,6 +22,7 @@ export default function OfferShowBody(props) {
     const offer = props.offer;
     const { isOpen, onOpen, onClose } = useDisclosure();
     const dispatch = useDispatch();
+    const token = useSelector(state => state.user.me.token);
 
     const requirements = [];
 
@@ -60,10 +61,13 @@ export default function OfferShowBody(props) {
                     name,
                     lastName,
                     description,
-                    cv
+                    cv,
+                    token
                 )
             )
         );
+
+        onClose();
     }
 
     return (

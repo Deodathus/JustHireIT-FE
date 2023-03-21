@@ -13,10 +13,11 @@ function get(url, body, token = null) {
     });
 }
 
-function post(url, body, token = null) {
+function post(url, body, token = null, withFiles = true) {
     return axios.post(url, body, {
         headers: {
             'X-Auth-Token': token,
+            'Content-Type': 'multipart/form-data'
         }
     });
 }

@@ -1,15 +1,16 @@
 import Types from "../../dictionaries/actions/Types";
 
-function apply(id, jobId, name, lastName, description, cv) {
+function apply(id, jobId, name, lastName, description, cv, token) {
     return {
-        type: Types.OFFER.APPLY.APPLY_FINISHED,
+        type: Types.OFFER.APPLY.APPLY,
         payload: {
             id,
             jobId,
             name,
             lastName,
             description,
-            cv
+            cv,
+            token
         }
     }
 }
