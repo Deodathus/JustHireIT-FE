@@ -9,11 +9,13 @@ import SignInComponent from "./components/authentication/signin/SignInComponent"
 import SignUpComponent from "./components/authentication/signup/SignUpComponent";
 import PanelLayout from "./components/panel/PanelLayout";
 import PanelBillingComponent from "./components/panel/me/billing/PanelBillingComponent";
-import PanelRecruitmentList from "./components/panel/recruitment/PanelRecruitmentList";
+import PanelJobList from "./components/panel/job/PanelJobList";
 import PanelOfferList from "./components/panel/offer/PanelOfferList";
 import PanelHomeComponent from "./components/panel/PanelHomeComponent";
 import PanelMeComponent from "./components/panel/me/PanelMeComponent";
 import PanelOfferCreateForm from "./components/panel/offer/PanelOfferCreateForm";
+import PanelJobCreateForm from "./components/panel/job/PanelJobCreateForm";
+import PanelJobEditForm from "./components/panel/job/PanelJobEditForm";
 
 export default function Router() {
     const version = useSelector(state => {
@@ -47,7 +49,9 @@ export default function Router() {
             children: [
                 { path: '/panel/home', element: <PanelHomeComponent /> },
                 { path: '/panel/me/billing', element: <PanelBillingComponent /> },
-                { path: '/panel/recruitment', element: <PanelRecruitmentList /> },
+                { path: '/panel/job', element: <PanelJobList /> },
+                { path: '/panel/job/:jobId/edit', element: <PanelJobEditForm /> },
+                { path: '/panel/job/create', element: <PanelJobCreateForm />},
                 { path: '/panel/offer', element: <PanelOfferList/> },
                 { path: '/panel/offer/create', element: <PanelOfferCreateForm />},
                 { path: '/panel/me', element: <PanelMeComponent /> }

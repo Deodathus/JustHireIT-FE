@@ -1,10 +1,27 @@
-import {Badge, Box, Button, Card, CardBody, Center, SimpleGrid} from "@chakra-ui/react";
+import {
+    Badge,
+    Box,
+    Button,
+    Card,
+    CardBody,
+    Center,
+    Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader,
+    ModalOverlay,
+    SimpleGrid,
+    useDisclosure
+} from "@chakra-ui/react";
 import OfferRequirement from "../requirements/OfferRequirement";
 import OfferPropertyTypes from "../../../dictionaries/offer/OfferPropertyTypes";
 import OfferSalary from "../requirements/OfferSalary";
+import ApplicationFormComponent from "../application/ApplicationFormComponent";
+import {useDispatch} from "react-redux";
+import ApplyOnOfferActionCreator from "../../../actions/offers/ApplyOnOfferActionCreator";
+import ApplyOnOfferReducer from "../../../reducers/offers/ApplyOnOfferReducer";
 
 export default function OfferShowBody(props) {
     const offer = props.offer;
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const dispatch = useDispatch();
 
     const requirements = [];
 
@@ -32,6 +49,21 @@ export default function OfferShowBody(props) {
         if (property.type === OfferPropertyTypes.DESCRIPTION) {
             description = property.value;
         }
+    }
+
+    function apply(name, lastName, description, cv) {
+        dispatch(
+            ApplyOnOfferReducer.apply(
+                ApplyOnOfferActionCreator.apply(
+                    offer.id,
+                    offer.jobId,
+                    name,
+                    lastName,
+                    description,
+                    cv
+                )
+            )
+        );
     }
 
     return (
@@ -116,8 +148,25 @@ export default function OfferShowBody(props) {
             </SimpleGrid>
             <Center>
                 <Box m={'20px'}>
-                    <Button colorScheme='green'>Apply</Button>
+                    <Button onClick={onOpen} colorScheme='green'>Apply</Button>
                 </Box>
+
+                <Modal isOpen={isOpen} onClose={onClose}>
+                    <ModalOverlay />
+                    <ModalContent>
+                        <ModalHeader>Apply on {offer.name}</ModalHeader>
+                        <ModalCloseButton />
+                        <ModalBody>
+                            <ApplicationFormComponent applyFunction={apply} offer={offer} />
+                        </ModalBody>
+
+                        <ModalFooter>
+                            <Button colorScheme='red' mr={3} onClick={onClose}>
+                                Close
+                            </Button>
+                        </ModalFooter>
+                    </ModalContent>
+                </Modal>
             </Center>
         </>
     );

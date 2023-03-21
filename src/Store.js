@@ -24,6 +24,9 @@ let preloadedState = {
         elements: {},
         categories: {},
     },
+    jobs: {
+        elements: {},
+    },
     user: {
         me: {
             token: sessionStorage.getItem(Variables.SESSION_STORAGE_API_TOKEN_KEY)

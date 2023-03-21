@@ -10,10 +10,10 @@ function fetchMe(action) {
             await FetchMe(apiToken)
                 .then(response => {
                     dispatch(UserActionCreator.fetchMeFinished(
-                        response.data.login,
-                        response.data.email,
-                        response.data.team,
-                        response.data.features,
+                        response.data.me.login,
+                        response.data.me.email,
+                        response.data.me.team,
+                        response.data.me.features,
                     ));
                 })
                 .catch(error => {

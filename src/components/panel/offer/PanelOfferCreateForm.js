@@ -37,7 +37,7 @@ export default function PanelOfferCreateForm() {
                 <Heading as={'h1'}>
                     Offer
                 </Heading>
-                <form action="src/components/authentication/signin">
+                <form action="">
                     <SimpleGrid columns={{sm: 2, md: 2, lg: 2}}>
                         <FormControl className={'signUpFormControl'}>
                             <FormLabel>Name</FormLabel>

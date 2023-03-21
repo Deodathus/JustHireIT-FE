@@ -1,5 +1,6 @@
 import {useSelector} from "react-redux";
 import PanelOfferRowComponent from "./PanelOfferRowComponent";
+import {SimpleGrid} from "@chakra-ui/react";
 
 export default function PanelOfferList(props) {
     const offers = useSelector(state => state.offers.elements);
@@ -14,7 +15,9 @@ export default function PanelOfferList(props) {
 
     return (
         <>
-            {renderedJobs}
+            <SimpleGrid>
+                {renderedJobs}
+            </SimpleGrid>
         </>
     );
 }

@@ -26,7 +26,7 @@ export default function CategoriesLinks(props) {
                     </Box>
                     <Spacer />
                     <Box m={3.5}>
-                        <Filters />
+                        {/*<Filters />*/}
                     </Box>
                 </Flex>
             </Container>

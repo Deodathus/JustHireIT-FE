@@ -1,6 +1,6 @@
 import Statuses from "../../dictionaries/actions/Statuses";
 import FetchOfferCategories from "../../services/offers/FetchOfferCategories";
-import OfferCategoryActionCreator from "../../actions/job/OfferCategoryActionCreator";
+import OfferCategoryActionCreator from "../../actions/offers/OfferCategoryActionCreator";
 
 function fetchAll() {
     return async function fetchAllThunk(dispatch, getState) {

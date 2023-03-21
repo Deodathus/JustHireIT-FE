@@ -4,7 +4,7 @@ import {Outlet} from "react-router";
 import Footer from "../Footer";
 import PanelMenu from "./PanelMenu";
 import OfferFetchReducer from "../../reducers/offers/OfferFetchReducer";
-import OfferFetchActionCreator from "../../actions/job/OfferFetchActionCreator";
+import OfferFetchActionCreator from "../../actions/offers/OfferFetchActionCreator";
 import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 

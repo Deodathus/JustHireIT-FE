@@ -10,12 +10,15 @@ export default function () {
 
     return {
         ping: host + 'api/ping',
-        fetch: host + 'api/job/{jobId}/jobPost/{jobPostId}',
-        fetchAll: host + 'api/jobPost',
+        fetchOffer: host + 'api/job/{jobId}/jobPost/{jobPostId}',
+        fetchAllOffers: host + 'api/jobPost',
         fetchAllJobCategories: host + 'api/job/category',
         signin: host + 'api/auth/signin',
         signup: host + 'api/auth/signup',
         fetchMe: host + 'api/auth/me',
+        apply: host + 'api/job/{jobId}/jobPost/{jobPostId}',
+        storeJob: host + 'api/job',
+        fetchJobs: host + 'api/job'
     };
 }
 

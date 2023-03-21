@@ -5,10 +5,10 @@ import {Outlet, useParams} from "react-router";
 import Footer from "../Footer";
 import {useEffect} from "react";
 import OfferFetchReducer from "../../reducers/offers/OfferFetchReducer";
-import OfferFetchActionCreator from "../../actions/job/OfferFetchActionCreator";
+import OfferFetchActionCreator from "../../actions/offers/OfferFetchActionCreator";
 import {useDispatch} from "react-redux";
 import OfferCategoryFetchReducer from "../../reducers/offers/OfferCategoryFetchReducer";
-import OfferCategoryActionCreator from "../../actions/job/OfferCategoryActionCreator";
+import OfferCategoryActionCreator from "../../actions/offers/OfferCategoryActionCreator";
 
 export default function OffersLayout(props) {
     const dispatch = useDispatch();

@@ -1,5 +1,5 @@
 import Statuses from "../../dictionaries/actions/Statuses";
-import OfferFetchActionCreator from "../../actions/job/OfferFetchActionCreator";
+import OfferFetchActionCreator from "../../actions/offers/OfferFetchActionCreator";
 import FetchOffer from "../../services/offers/FetchOffer";
 import FetchOffers from "../../services/offers/FetchOffers";
 
@@ -80,7 +80,6 @@ function fetchAllError(state, action) {
 }
 
 function fetchAllFinished(state, action) {
-
     return {
         ...state,
         status: Statuses.finished,

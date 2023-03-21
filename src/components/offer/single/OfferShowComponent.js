@@ -1,6 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router";
-import OfferFetchActionCreator from "../../../actions/job/OfferFetchActionCreator";
+import OfferFetchActionCreator from "../../../actions/offers/OfferFetchActionCreator";
 import OfferFetchReducer from "../../../reducers/offers/OfferFetchReducer";
 import OfferShowSkeletonBody from "./OfferShowSkeletonBody";
 import OfferShowBody from "./OfferShowBody";

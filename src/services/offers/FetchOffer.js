@@ -4,5 +4,5 @@ import JusthireApiClient from "../JusthireApiClient";
 export default function FetchOffer(id, jobId) {
     const api = justhire();
 
-    return JusthireApiClient.get(api.fetch.replace('{jobPostId}', id).replace('{jobId}', jobId));
+    return JusthireApiClient.get(api.fetchOffer.replace('{jobPostId}', id).replace('{jobId}', jobId));
 }

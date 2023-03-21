@@ -5,7 +5,7 @@ export default function FetchOffers(page = 1, perPage = 20, category = null) {
     const api = justhire();
 
     return JusthireApiClient.get(
-        api.fetchAll,
+        api.fetchAllOffers,
         {
             category
         }
