@@ -8,7 +8,7 @@ export default function PanelMenu(props) {
             <Box className={'panelMenu'}>
                 <PanelMenuLink name={'Home'} link={'/panel/home'} icon={FaHome} />
                 <PanelMenuLink name={'Job'} link={'/panel/job'} icon={FaReadme} />
-                <PanelMenuLink name={'Offers'} link={'/panel/offers'} icon={FaEnvelope} />
+                <PanelMenuLink name={'Offers'} link={'/panel/offer'} icon={FaEnvelope} />
                 <PanelMenuLink name={'Billing'} link={'/panel/me/billing'} icon={FaDollarSign} />
                 <PanelMenuLink name={'Setting'} link={'/panel/me'} icon={FaSlidersH} />
             </Box>

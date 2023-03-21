@@ -18,7 +18,9 @@ export default function () {
         fetchMe: host + 'api/auth/me',
         apply: host + 'api/job/{jobId}/jobPost/{jobPostId}',
         storeJob: host + 'api/job',
-        fetchJobs: host + 'api/job'
+        fetchJobs: host + 'api/job',
+        storeJobPost: host + 'api/job/{jobId}/jobPost',
+        fetchSkills: host + 'api/candidate/skill',
     };
 }
 

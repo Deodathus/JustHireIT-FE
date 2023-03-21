@@ -27,6 +27,9 @@ let preloadedState = {
     jobs: {
         elements: {},
     },
+    candidates: {
+        skills: {},
+    },
     user: {
         me: {
             token: sessionStorage.getItem(Variables.SESSION_STORAGE_API_TOKEN_KEY)

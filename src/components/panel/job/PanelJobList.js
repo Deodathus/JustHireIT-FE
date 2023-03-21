@@ -7,11 +7,13 @@ import {useDispatch, useSelector} from "react-redux";
 import FetchJobsReducer from "../../../reducers/job/FetchJobsReducer";
 import FetchJobsActionCreator from "../../../actions/jobs/FetchJobsActionCreator";
 import PanelJobRowComponent from "./PanelJobRowComponent";
+import SkillsReducer from "../../../reducers/candidates/SkillsReducer";
+import SkillsActionCreator from "../../../actions/candidates/SkillsActionCreator";
 
 export default function PanelJobList(props) {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const token = useSelector(state => state.user.token);
+    const token = useSelector(state => state.user.me.token);
     const jobs = useSelector(state => state.jobs.elements);
     const categories = useSelector(state => state.offers.categories);
 
@@ -34,6 +36,12 @@ export default function PanelJobList(props) {
             )
         )
     }, jobs.values);
+
+    dispatch(
+        SkillsReducer.fetchAll(
+            SkillsActionCreator.fetchAll(token)
+        )
+    );
 
     let renderedJobs = [];
     if (jobs) {

@@ -53,7 +53,7 @@ export default function Router() {
                 { path: '/panel/job/:jobId/edit', element: <PanelJobEditForm /> },
                 { path: '/panel/job/create', element: <PanelJobCreateForm />},
                 { path: '/panel/offer', element: <PanelOfferList/> },
-                { path: '/panel/offer/create', element: <PanelOfferCreateForm />},
+                { path: '/panel/job/:jobId/offer/create', element: <PanelOfferCreateForm />},
                 { path: '/panel/me', element: <PanelMeComponent /> }
             ]
         },

@@ -34,6 +34,14 @@ const types = {
             ALL_FETCH_FINISHED: 'JOB|ALL_FETCH_FINISHED',
         }
     },
+    CANDIDATE: {
+        SKILL: {
+            FETCH: {
+                ALL_FETCH: 'CANDIDATE_SKILL|FETCH_ALL',
+                ALL_FETCH_FINISHED: 'CANDIDATE_SKILL|FETCH_ALL_FINISHED',
+            }
+        }
+    },
     USER: {
         ME: {
             FETCH: {

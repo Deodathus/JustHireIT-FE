@@ -10,6 +10,7 @@ import Select from 'react-select';
 import {useState} from "react";
 import {useSelector} from "react-redux";
 import {useParams} from "react-router";
+import {Link} from "react-router-dom";
 
 export default function PanelJobEditForm() {
     const categories = useSelector(state => state.offers.categories);
@@ -85,7 +86,9 @@ export default function PanelJobEditForm() {
                         </SimpleGrid>
                         <Box m={'20px'}>
                             <Button colorScheme='green'>Update</Button>
-                            <Button ml={5} colorScheme='blue'>Create job post</Button>
+                            <Link to={'/panel/job/' + job.id + '/offer/create'}>
+                                <Button ml={5} colorScheme='blue'>Create job post</Button>
+                            </Link>
                         </Box>
                     </form>
                 </Box>
